@@ -2,10 +2,11 @@ import Link from "next/link";
 
 export default function StudentInfo() {
     return(
-        <main>
-            <h1>CPRG306 Assignments</h1>
+        <main className="text-3xl">
+            <br />
+            <h1 className="">Mona He</h1>
             <ul>
-                <li><Link className="text-pink-600 hover:text-emerald-500" href="https://github.com/Mona121212?tab=repositories"> Mona github</Link></li>
+                <li><Link className="text-pink-600 hover:text-emerald-500" href="https://github.com/Mona121212"> Welcome to my github</Link></li>
             </ul>
         </main>
     )
