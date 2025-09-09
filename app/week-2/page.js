@@ -1,14 +1,10 @@
-import Link from "next/link";
+import StudentInfo from "./student-info";
 
-export default function MySecondPage() {
-      let a = 3;
-    let b = 4;
-    return(
+export default function Page() {
+    return (
         <main>
-            <h1>My Second Page</h1> 
-            <p>This is my second page of my new react web app!</p>
-            <Link href="https:www.sait.ca"> sait page</Link>
-            <p>{a} added to {b} equal to {a + b}</p>
+            <h1>Shopping list</h1>
+            <StudentInfo />
         </main>
-    );
+    )
 }
