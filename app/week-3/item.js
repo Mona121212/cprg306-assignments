@@ -9,9 +9,6 @@ export default function Item(props) {
                 <div className="text-lg font-semibold ml-4">   Quantity: {quantity}</div>
             </div>
             
-
-            
-        
         </li>
         
 
