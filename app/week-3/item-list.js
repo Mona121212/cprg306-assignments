@@ -74,24 +74,9 @@ const item12 = {
 };
 
 const items = [item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12];
-      
-    /*for (let i = 0; i < items.length; i++) {
-      itemElements.push(
-        <div key={i}>
-          <h3>{items[i].name}</h3>
-          <p>{items[i].quantity}</p>
-          <p>{items[i].category}</p>
-          <br></br>
-        </div>
-      );
-    }
-
-    return <main>{itemElements}</main>;
-    */
+    
    return(
     <ul>
-
-      
       {items.map((item, index) =>(
         <Item 
         key = {index}
