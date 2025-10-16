@@ -48,11 +48,14 @@ export default function NewItem() {
   };
 
   let buttonStyle =
-    "w-8 p-1 bg-amber-600 text-white font-semibold rounded-full shadow-md hover:bg-amber-500 focus:outline-none";
+    "w-10 h-10 bg-amber-600 text-white font-bold rounded-full hover:bg-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-400 transition disabled:opacity-50 disabled:cursor-not-allowed";
+
+  let inputStyle =
+    "w-full px-4 py-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 transition";
 
   return (
     <form
-      className="flex justify-center items-center m-100 w-full"
+      className="w-full max-w-md bg-gray-800 rounded-xl shadow-2xl p-8 space-y-6"
       onSubmit={handleSubmit}
     >
       <div>
@@ -61,24 +64,35 @@ export default function NewItem() {
           onChange={handleItemNameChange}
           value={name}
           required
-          className="p-4 m-20 bg-gray-700 rounded-lg text-white w-40"
+          className={inputStyle}
           placeholder="Item Name"
         />
       </div>
-      <div className="p-4 m-20 bg-gray-700 rounded-lg text-white w-40">
-        <div className="flex justify-between">
-          <p className="text-blue-50 m-1"> {quantity}</p>
-          <button type="button" className={buttonStyle} onClick={decrement}>
-            -
-          </button>
-          <button type="button" className={buttonStyle} onClick={increment}>
-            +
-          </button>
+      <div className="block text-m font-medium text-emerald-400 mb-3 text-center">
+        <div>
+          <div>
+            <p className=" block text-m font-medium text-gray-300 mb-2">
+              {quantity}
+            </p>
+          </div>
+
+          <div className="flex items-center justify-center space-x-4 bg-gray-700 rounded-lg p-4">
+            <button type="button" className={buttonStyle} onClick={decrement}>
+              -
+            </button>
+            <button type="button" className={buttonStyle} onClick={increment}>
+              +
+            </button>
+          </div>
         </div>
 
         {/**category field */}
-        <div>
-          <select value={category} onChange={handleCategoryChange}>
+        <div className="block text-sm font-medium text-gray-300 mb-2">
+          <select
+            value={category}
+            onChange={handleCategoryChange}
+            className="w-full px-4 py-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 transition cursor-pointer"
+          >
             <option value="produce">Produce</option>
             <option value="dairy">Dairy</option>
             <option value="bakery">Bakery</option>
@@ -94,7 +108,12 @@ export default function NewItem() {
         </div>
 
         <div>
-          <button type="submit">Submit Items</button>
+          <button
+            type="submit"
+            className="w-full py-3 bg-amber-600 text-white font-semibold rounded-lg hover:bg-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-400 transition shadow-lg"
+          >
+            +
+          </button>
         </div>
       </div>
       <div>
