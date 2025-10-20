@@ -33,6 +33,13 @@ export default function Home() {
           >
             Week Five
           </Link>
+          <br></br>
+          <Link
+            className="text-shadow-blue-500 hover:text-amber-400 text-4xl"
+            href="./week-6"
+          >
+            Week Six
+          </Link>
         </li>
       </ul>
     </main>
