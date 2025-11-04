@@ -36,8 +36,14 @@ export default function Page() {
       <div>
         <h1 className="text-2xl p-4">Shopping List</h1>
         <NewItem newItemFunc={handleAddItem} />
-        <ItemList items={items} onItemSelect={handleItemSelect} />
-        <MealIdeas ingredient={selectedItemName} />
+        <div className="flex flex-col md: flex-row gap-6">
+          <div className="md: w-1/2">
+            <ItemList items={items} onItemSelect={handleItemSelect} />
+          </div>
+          <div className="md: w-1/2">
+            <MealIdeas ingredient={selectedItemName} />
+          </div>
+        </div>
       </div>
     </main>
   );
