@@ -44,12 +44,16 @@ export default function MealIdeas({ ingredient }) {
   async function loadMealIdeas(ing) {
     if (!ing) {
       setMeals([]);
+      setSelectedMeal(null);
+      setDetails(null);
       return;
     }
 
     setLoading(true);
     const result = await fetchMealIdeas(ing);
-    setMeals(result);
+    setMeals(result || []);
+    setSelectedMeal(null);
+    setDetails(null);
     setLoading(false);
   }
 
@@ -65,7 +69,7 @@ export default function MealIdeas({ ingredient }) {
     setLoadingDetails(false);
   }
   function getIngredients(meal) {
-    if (!meal) return [];
+    if (!meal) return;
     const list = [];
     for (let i = 1; i <= 20; i++) {
       const ing = meal[`strIngredient${i}`];
@@ -123,9 +127,9 @@ export default function MealIdeas({ ingredient }) {
           )}
         </div>
 
-        <aside className="border rounder p-4 min-h-[150px] md:w-[500px]">
+        <aside className="rounder p-4 min-h-[150px] md:w-[500px]">
           {selectedMeal && (
-            <div className="mt-6 border-t pt-4">
+            <div className="mt-6 pt-4 gap-6">
               {loadingDetails && <p>Loading meal details...</p>}
               {details && (
                 <div>
